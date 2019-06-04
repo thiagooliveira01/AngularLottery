@@ -1,0 +1,11 @@
+<h5>Meus jogos:</h5>
+<ul>
+  <li *ngFor="let game of myGames">
+    <span *ngFor="let n of game">
+      <span>{{ n }}</span>
+      {{' '}}
+    </span>
+  </li>
+</ul>
+
+<button (click)="generateRandomGames()" > Gerar novamente </button>

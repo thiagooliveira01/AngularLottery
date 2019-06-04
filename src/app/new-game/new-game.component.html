@@ -1,0 +1,23 @@
+<h5>Novo jogo:</h5>
+<div class="numeros">
+  <div class="numeros">
+    <input min="1"
+      max="60"
+      type="number"
+      *ngFor="let n of newGame; index as i; trackBy trackByIndex"
+      [(ngModel)]="newGame[i]"
+      >
+            <!-- [class.invalido]="!numeroValido(novoJogo[i])"-->
+  </div>
+</div>
+
+<button 
+  (click)="postGame()"
+>
+ <!-- [disabled]="temNumeroInvalido()"-->
+  Incluir novo jogo
+</button>
+{{' '}}
+<button (click)="genGame()">
+  Gerar novo jogo
+</button>

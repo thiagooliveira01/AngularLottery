@@ -1,0 +1,15 @@
+.numeros {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  input {
+    margin-right: 30px !important;
+  }
+  
+  .invalido {
+    color: red;
+  }
+  
