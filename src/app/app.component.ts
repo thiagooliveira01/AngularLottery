@@ -9,18 +9,18 @@ export class AppComponent {
   title = 'angular-megasena';
 
   pickedNumbers = [];
-
   myGames = [];
+  lotteryDraw = false;
 
   constructor() {  }
 
-  /**
-   * Esse método é emitido por <app-sorteio>
-   * @param numerosSorteados Números que foram sorteados
-   
-  definirSorteio(numerosSorteados) {
-    this.numerosSorteados = numerosSorteados;
-  }*/
+  setLotteryDraw(lotteryDraw){
+    this.lotteryDraw = lotteryDraw;
+  }
+
+  setDraw(pickedNumbers) {
+    this.pickedNumbers = pickedNumbers;
+  }
 
   newGames(game) {
     this.myGames.push(game);

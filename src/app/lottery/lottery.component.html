@@ -1,3 +1,12 @@
-<p>
-  lottery works!
-</p>
+<div>
+    <h5>Sorteio:</h5>
+     <ol>
+        <div class='row'>
+          <div *ngFor="let n of pickedNumbers">
+            <app-number [value]="n" [picked]=true ></app-number>
+          </div>
+        </div>
+      </ol>
+    <button (click)="draw()" [disabled]="lotteryDraw"> Iniciar sorteio </button>
+    <button (click)="generateRandomGames()" [disabled]="lotteryDraw"> Gerar novos números  </button>
+</div>

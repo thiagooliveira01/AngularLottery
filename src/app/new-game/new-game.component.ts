@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GameService } from '../game.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { GameService } from '../game.service';
   styleUrls: ['./new-game.component.css']
 })
 export class NewGameComponent implements OnInit {
+  @Input() lotteryDraw = false;
   @Output() submitNewGame = new EventEmitter();
 
   newGame = [];
@@ -26,19 +27,19 @@ export class NewGameComponent implements OnInit {
     return filter.length === 1;
   }
 
-  temNumeroInvalido() {
+  gameValid() {
     for (let i = 0; i < this.newGame.length; i++) {
-      const numero = this.newGame[i];
-      if (!this.numberValid(numero)) {
-        return true;
+      const n = this.newGame[i];
+      if (!this.numberValid(n)) {
+        return false;
       }
     }
 
-    return false;
+    return true;
   }
 
   postGame() {
-    this.submitNewGame.emit(this.gameService.ordenarJogo([...this.newGame]));
+    this.submitNewGame.emit([...this.newGame.sort((a, b) => a - b)]);
   }
 
   genGame() {

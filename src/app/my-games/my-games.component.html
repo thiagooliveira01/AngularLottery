@@ -1,11 +1,10 @@
 <h5>Meus jogos:</h5>
 <ul>
-  <li *ngFor="let game of myGames">
-    <span *ngFor="let n of game">
-      <span>{{ n }}</span>
-      {{' '}}
-    </span>
-  </li>
+  <ol *ngFor="let game of myGames">
+    <div class='row'>
+      <div *ngFor="let n of game">
+        <app-number [value]="n" [picked]=pickedNumber(n) ></app-number>
+      </div>
+    </div>
+  </ol>
 </ul>
-
-<button (click)="generateRandomGames()" > Gerar novamente </button>

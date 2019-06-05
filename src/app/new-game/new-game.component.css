@@ -1,4 +1,4 @@
-.numeros {
+.numbers {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,10 +6,10 @@
   }
   
   input {
-    margin-right: 30px !important;
+    margin-right: 10px;
   }
   
-  .invalido {
+  .invalid {
     color: red;
   }
   

@@ -4,14 +4,13 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<div>
-    <app-lottery></app-lottery>
-</div>
 
-<div>
-<app-my-games (sendGames)="registerGame($event)" [myGames]="myGames" [pickedNumbers]="pickedNumbers"></app-my-games>
-</div>
+<app-lottery (whenDraw)="setDraw($event)" 
+             [pickedNumbers]="pickedNumbers" 
+             (sendGames)="registerGame($event)"
+             (isLoteryDraw)="setLotteryDraw($event)"></app-lottery>
 
-<div>
-<app-new-game (submitNewGame)="newGames($event)"></app-new-game>
-</div>
+<app-my-games [myGames]="myGames" [pickedNumbers]="pickedNumbers"></app-my-games>
+
+<app-new-game [lotteryDraw]="lotteryDraw" (submitNewGame)="newGames($event)" ></app-new-game>
+

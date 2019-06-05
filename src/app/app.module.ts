@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MyGamesComponent } from './my-games/my-games.component';
 import { NewGameComponent } from './new-game/new-game.component';
 import { LotteryComponent } from './lottery/lottery.component';
+import { NumberComponent } from './number/number.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyGamesComponent,
     NewGameComponent,
-    LotteryComponent
+    LotteryComponent,
+    NumberComponent
   ],
   imports: [
     BrowserModule, FormsModule
